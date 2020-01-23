@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+a{
+ font-size:25px;
+}
+p {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 0px;
+  color:red;
+}
+</style>
+<style>
+body{background-color:	#AFEEEE;}
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+a{
+cursor:pointer;
+}
+h2{
+ font-size:20px;
+}
+</style>
+</head>
+<body>
+
+<h2>SEATING ARRANGEMENT</h2><br>
+<ul class="breadcrumb">
+  <li><a onclick="window.location('link2.html')">CSE</a></li>
+  <li><a onclick="window.location('link3.html')">IT</a></li>
+  <li><a onclick="window.location('link4.html')">EEE</a></li>
+  <li><a onclick="window.location('link5.html')">ECE</a></li>
+  <li><a onclick="window.location('link6.html')">FT</a></li>
+  <li><a onclick="window.location('link7.html')">MECH</a></li>
+</ul>
+
+<br><br><br>
+<p id="demo"></p>
+
+<script>
+
+var countDownDate = new Date("Apr 16, 2019 19:37:25").getTime();
+
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+    
+ 
+  var distance = countDownDate - now;
+ 
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("demo").innerHTML = days +"d  " + hours + "h  "
+  + minutes + "m  " + seconds + "s  ";
+     
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
